@@ -11,6 +11,10 @@ public class UserInterface {
     public UserInterface(){
         this.input = new Scanner(System.in);
     }
+
+    /**
+     * Method to allow the user to choose their next action.
+     */
     public void show()
     {
         welcome();
@@ -31,6 +35,9 @@ public class UserInterface {
         }
     }
 
+    /**
+     * Method that prints out the tickets the user has in blocks of 25.
+     */
     private void listTickets()
     {
         List<Ticket> tickets = Api.getAllTickets();
@@ -49,6 +56,10 @@ public class UserInterface {
         }
     }
 
+    /**
+     * Method that takes and integer input from the user and outputs the ticket
+     * that has an id that matches the integer, if it exists.
+     */
     public void singleTicket()
     {
         System.out.println("Enter the ticket number you would like to view");
@@ -63,6 +74,9 @@ public class UserInterface {
         }
     }
 
+    /**
+     * Method to display the main menu options to the user
+     */
     private void menu()
     {
         System.out.println();

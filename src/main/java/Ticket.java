@@ -26,6 +26,9 @@ public class Ticket {
 
     }
 
+    /**
+     * Method to print out the details that we desire from the ticket.
+     */
     public void print()
     {
         System.out.println("Ticket number: " + id);

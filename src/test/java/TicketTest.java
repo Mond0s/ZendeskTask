@@ -18,7 +18,6 @@ public class TicketTest {
 
     }
 
-
     @Test
     public void print()
     {

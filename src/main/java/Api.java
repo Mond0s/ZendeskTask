@@ -10,7 +10,12 @@ import java.util.List;
 public class Api {
     public static String url = "https://aymanelgendy2.zendesk.com/api/v2/tickets.json";
 
-
+    /**
+     * Method that makes a request to the Zendesk Api and retrieves a json object
+     * that contains all the tickets in the account.
+     * @param page
+     * @return
+     */
     public static JSONObject getTickets(String page)
     {
         HttpResponse<JsonNode> response = Unirest.get(page)
@@ -27,6 +32,10 @@ public class Api {
         return null;
     }
 
+    /**
+     * Method to return our ticketlist that contains all of our tickets.
+     * @return
+     */
     public static List<Ticket> getAllTickets()
     {
         List<Ticket> ticketList = new ArrayList<Ticket>();
@@ -44,6 +53,10 @@ public class Api {
         return ticketList;
     }
 
+    /**
+     * Method that adds each page of tickets into a list that contains all our previously retrieved tickets.
+     * @return
+     */
     public static void updateTicketlist(JSONArray resp_array, List<Ticket> ticketList)
     {
         for (int i = 0; i < resp_array.length(); i++) {
