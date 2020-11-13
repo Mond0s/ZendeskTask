@@ -7,18 +7,16 @@ public class Ticket {
     private String description;
 
 
-    public Ticket(String id , String subject, String submitter_id,String description) {
+    public Ticket(String id , String subject, String submitter_id,String description)
+    {
         this.id = id;
         this.subject = subject;
         this.submitter_id = submitter_id;
         this.description = description;
-
-
-
-
     }
 
-    public Ticket(JSONObject Json) { /*  Constructor overloading */
+    public Ticket(JSONObject Json)
+    { /*  Constructor overloading */
         this(
                 Json.getString("id"),
                 Json.getString("subject"),
@@ -26,11 +24,10 @@ public class Ticket {
                 Json.getString("description")
         );
 
-
-
-
     }
-    public void print(){
+
+    public void print()
+    {
         System.out.println("Ticket number: " + id);
         System.out.println("Submitted by: " + submitter_id);
         System.out.println("Subject: " + subject);
@@ -39,19 +36,23 @@ public class Ticket {
         System.out.println();
     }
 
-    public String getSubject() {
+    public String getSubject()
+    {
         return subject;
     }
 
-    public String getId() {
+    public String getId()
+    {
         return id;
     }
 
-    public String getSubmitter_id() {
+    public String getSubmitter_id()
+    {
         return submitter_id;
     }
 
-    public String getDescription() {
+    public String getDescription()
+    {
         return description;
     }
 }

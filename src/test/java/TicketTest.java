@@ -7,17 +7,22 @@ import java.io.PrintStream;
 import static org.junit.Assert.*;
 
 public class TicketTest {
-
-
-    @Test
-    public void print() {
-        ByteArrayOutputStream outContent = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(outContent));
+    JSONObject myJson;
+    public TicketTest()
+    {
         JSONObject myJson = new JSONObject();
         myJson.put("subject","test ticket");
         myJson.put("id","123");
         myJson.put("description","this is a test ticket");
         myJson.put("submitter_id","5960320");
+
+    }
+
+
+    @Test
+    public void print()
+    {
+
         Ticket ticketTest = new Ticket(myJson);
         assertEquals("Ticket number: 123","Ticket number: " + ticketTest.getId());
         assertEquals("Subject: test ticket","Subject: " + ticketTest.getSubject());
@@ -27,29 +32,22 @@ public class TicketTest {
     }
 
     @Test
-    public void getSubject() {
-        JSONObject myJson = new JSONObject();
-        myJson.put("subject", "test ticket");
-        myJson.put("id", "123");
-        myJson.put("description", "this is a test ticket");
-        myJson.put("submitter_id", "5960320");
+    public void getSubject()
+    {
         Ticket ticketTest = new Ticket(myJson);
         assertEquals("test ticket", ticketTest.getSubject());
     }
 
     @Test
-    public void getId() {
-        JSONObject myJson = new JSONObject();
-        myJson.put("subject", "test ticket");
-        myJson.put("id", "123");
-        myJson.put("description", "this is a test ticket");
-        myJson.put("submitter_id", "5960320");
+    public void getId()
+    {
         Ticket ticketTest = new Ticket(myJson);
         assertEquals("123", ticketTest.getId());
     }
 
     @Test
-    public void getSubmitter_id() {
+    public void getSubmitter_id()
+    {
         JSONObject myJson = new JSONObject();
         myJson.put("subject", "test ticket");
         myJson.put("id", "123");
