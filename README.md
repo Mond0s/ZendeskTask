@@ -3,9 +3,9 @@
  ## Installation Guide
  * Download the project zipfile or clone the github repository
  * Download and install Java 11
- * Make sure java is added to your System Path
- *Once unzipped you can find the application jar file
- in ../ZendeskTask/out/artifacts/ZendeskTask_jar
+ * Add to your System Path
+ * Once unzipped you can find the application jar file
+ in ZendeskTask/out/artifacts/ZendeskTask_jar
  
  
  
