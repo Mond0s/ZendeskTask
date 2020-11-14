@@ -8,7 +8,8 @@ public class UserInterface {
 
 
     private Scanner input;
-    public UserInterface(){
+    public UserInterface()
+    {
         this.input = new Scanner(System.in);
     }
 
@@ -47,14 +48,30 @@ public class UserInterface {
             if (i % 24 == 0 && i != 0) {
                 System.out.println("TYPE next TO VIEW THE NEXT PAGE OF TICKETS");
                 System.out.println("ENTER ANY OTHER WORD TO RETURN TO THE MAIN MENU");
-                String next = input.next();
-                if (!next.equals("next")) {
+                String next = validAction();
+                if (next.equals("stop")) {
                     System.out.println("Returning to main menu....");
                     break;
                 }
+
+                if(next.equals("next")){
+                }
+
+
             }
         }
     }
+
+    private String validAction() {
+        String action = input.next();
+        if(!action.equals("stop")&& !action.equals("next")){
+            System.out.println("Invalid input!");
+            return validAction();
+        }
+        return action;
+    }
+
+
 
     /**
      * Method that takes and integer input from the user and outputs the ticket
@@ -80,12 +97,13 @@ public class UserInterface {
     private void menu()
     {
         System.out.println();
-        System.out.println("Enter 1 to view a list of tickets, or 2 to view an individual ticket.");
         System.out.println("To exit the application type Quit.");
+        System.out.println("Enter 1 to view a list of tickets, or 2 to view an individual ticket.");
+
     }
 
     private void welcome(){
-        System.out.println("Welcome to the Zendesk ticket viewer:");
+        System.out.print("Welcome to the Zendesk ticket viewer:");
     }
 
 }

@@ -16,7 +16,7 @@ public class Ticket {
     }
 
     public Ticket(JSONObject Json)
-    { /*  Constructor overloading */
+    {
         this(
                 Json.getString("id"),
                 Json.getString("subject"),
