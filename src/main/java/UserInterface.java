@@ -79,7 +79,6 @@ public class UserInterface {
      */
     public void singleTicket()
     {
-
         List<Ticket> tickets = Api.getAllTickets();
         System.out.println("Enter the ticket number you would like to view");
         int ticketNum = input.nextInt();
