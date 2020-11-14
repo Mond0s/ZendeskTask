@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,15 +48,14 @@ public class UserInterface {
             ticket.print();
             if (i % 24 == 0 && i != 0) {
                 System.out.println("TYPE next TO VIEW THE NEXT PAGE OF TICKETS");
-                System.out.println("ENTER ANY OTHER WORD TO RETURN TO THE MAIN MENU");
+                System.out.println("ENTER stop TO RETURN TO THE MAIN MENU");
                 String next = validAction();
                 if (next.equals("stop")) {
                     System.out.println("Returning to main menu....");
                     break;
                 }
 
-                if(next.equals("next")){
-                }
+                System.out.println();
 
 
             }
@@ -79,16 +79,20 @@ public class UserInterface {
      */
     public void singleTicket()
     {
-        System.out.println("Enter the ticket number you would like to view");
+
         List<Ticket> tickets = Api.getAllTickets();
+        System.out.println("Enter the ticket number you would like to view");
         int ticketNum = input.nextInt();
         try {
             Ticket ticket = tickets.get(ticketNum - 1);
             ticket.print();
+
         } catch (IndexOutOfBoundsException e) {
-            System.out.println("You have entered an invalid ticket number, please a different number");
+            System.out.println("You have entered an invalid ticket number, please try a different number");
             singleTicket();
         }
+
+
     }
 
     /**
@@ -102,7 +106,8 @@ public class UserInterface {
 
     }
 
-    private void welcome(){
+    private void welcome()
+    {
         System.out.print("Welcome to the Zendesk ticket viewer:");
     }
 
