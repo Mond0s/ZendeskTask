@@ -23,5 +23,4 @@
  you entered.
  8. To exit the application, return to the main menu and type "Quit"
  
- ## Video WalkThrough
- Video walk through can be found here (https://youtu.be/5G-X7FYCvl8)
+ 
